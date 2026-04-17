@@ -1,5 +1,6 @@
 {
   "timestamp": 1713350000,
   "position": { "x": 0, "y": 0, "z": -1 },
-  "rotation": { "qx": 0, "qy": 0, "qz": 0, "qw": 1 }
+  "rotation": { "qx": 0, "qy": 0, "qz": 0, "qw": 1 },
+  "targetLabel": "Lab B-213"
 }

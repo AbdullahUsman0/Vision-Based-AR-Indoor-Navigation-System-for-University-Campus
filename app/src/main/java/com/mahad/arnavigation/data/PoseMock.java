@@ -4,16 +4,7 @@ public class PoseMock {
     private long timestamp;
     private Position position;
     private Rotation rotation;
-
-    public PoseMock() {
-        // Required by Gson reflection-based deserialization.
-    }
-
-    public PoseMock(long timestamp, Position position, Rotation rotation) {
-        this.timestamp = timestamp;
-        this.position = position;
-        this.rotation = rotation;
-    }
+    private String targetLabel;
 
     public long getTimestamp() {
         return timestamp;
@@ -25,5 +16,9 @@ public class PoseMock {
 
     public Rotation getRotation() {
         return rotation;
+    }
+
+    public String getTargetLabel() {
+        return targetLabel;
     }
 }

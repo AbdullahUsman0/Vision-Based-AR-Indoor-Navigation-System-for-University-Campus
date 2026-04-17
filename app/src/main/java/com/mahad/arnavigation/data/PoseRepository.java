@@ -24,14 +24,9 @@ public class PoseRepository {
 
     public PoseMock loadMockPose() {
         try (BufferedReader reader = new BufferedReader(
-            new InputStreamReader(context.getAssets().open("pose_mock.json"), StandardCharsets.UTF_8)
+                new InputStreamReader(context.getAssets().open("pose_mock.json"), StandardCharsets.UTF_8)
         )) {
-            StringBuilder jsonBuilder = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                jsonBuilder.append(line);
-            }
-            return gson.fromJson(jsonBuilder.toString(), PoseMock.class);
+            return gson.fromJson(reader, PoseMock.class);
         } catch (IOException e) {
             throw new RuntimeException("Failed to load pose_mock.json", e);
         }

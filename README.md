@@ -1,4 +1,4 @@
-# AR Navigation Starter (Kotlin + ARCore + Sceneform)
+# AR Navigation Starter (Java + ARCore + Sceneform)
 
 Minimal, production-ready starter for indoor AR navigation:
 - ARCore camera + tracking
@@ -17,17 +17,19 @@ AR_NavigationSystem/
       AndroidManifest.xml
       assets/pose_mock.json
       java/com/mahad/arnavigation/
-        MainActivity.kt
+        MainActivity.java
         ar/
-          ArController.kt
-          NavigationArFragment.kt
+          ArController.java
+          NavigationArFragment.java
         data/
-          PoseModels.kt
-          PoseRepository.kt
+          PoseMock.java
+          PoseRepository.java
+          Position.java
+          Rotation.java
         render/
-          ArrowFactory.kt
+          ArrowFactory.java
         util/
-          PoseSmoother.kt
+          PoseSmoother.java
       res/
         layout/activity_main.xml
         values/strings.xml
@@ -54,7 +56,7 @@ sdk.dir=C:\\Users\\<your-user>\\AppData\\Local\\Android\\Sdk
 5. Build from terminal:
 
 ```powershell
-gradle assembleDebug
+.\tools\gradle-8.6\bin\gradle.bat --no-daemon assembleDebug
 ```
 
 6. Install on device:
@@ -69,3 +71,4 @@ adb install -r app\build\outputs\apk\debug\app-debug.apk
 - Use a physical ARCore-supported Android phone for reliable AR behavior.
 - `ArController` logs applied JSON pose for coordinate-system debugging.
 - `PoseSmoother` provides simple low-pass smoothing to reduce jitter.
+- This is a fully native Android app; it will not run in Expo Go.

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AR Navigation</string>
+    <string name="use_server_switch">Use server localization</string>
+    <string name="server_endpoint_hint">http://10.0.2.2:8000/pose</string>
+    <string name="apply_settings_button">Apply</string>
 </resources>

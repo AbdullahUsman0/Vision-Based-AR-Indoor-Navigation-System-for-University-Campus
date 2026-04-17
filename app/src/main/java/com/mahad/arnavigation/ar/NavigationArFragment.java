@@ -12,8 +12,6 @@ public class NavigationArFragment extends ArFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        planeDiscoveryController.hide();
-        planeDiscoveryController.setInstructionView(null);
-        arSceneView.getPlaneRenderer().setVisible(false);
+        getArSceneView().getPlaneRenderer().setVisible(false);
     }
 }

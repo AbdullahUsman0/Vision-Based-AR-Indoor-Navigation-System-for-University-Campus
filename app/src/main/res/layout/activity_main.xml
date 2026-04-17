@@ -27,4 +27,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/roomLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#CC1B5E20"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/controlPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="#AA000000"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/useServerSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/use_server_switch" />
+
+        <EditText
+            android:id="@+id/serverEndpointInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/server_endpoint_hint"
+            android:inputType="textUri"
+            android:padding="6dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#FFBBBBBB"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/applySettingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/apply_settings_button" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

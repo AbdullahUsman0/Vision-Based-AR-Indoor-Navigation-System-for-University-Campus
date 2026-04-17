@@ -3,15 +3,14 @@ package com.mahad.arnavigation.util;
 import com.google.ar.sceneform.math.Quaternion;
 import com.google.ar.sceneform.math.Vector3;
 
+/**
+ * Simple low-pass smoothing to reduce visual jitter.
+ */
 public class PoseSmoother {
     private final float alpha;
     private Vector3 smoothedPosition = Vector3.zero();
     private Quaternion smoothedRotation = Quaternion.identity();
     private boolean initialized = false;
-
-    public PoseSmoother() {
-        this(0.2f);
-    }
 
     public PoseSmoother(float alpha) {
         this.alpha = alpha;
@@ -23,11 +22,10 @@ public class PoseSmoother {
             initialized = true;
             return target;
         }
-
         smoothedPosition = new Vector3(
-            lerp(smoothedPosition.x, target.x),
-            lerp(smoothedPosition.y, target.y),
-            lerp(smoothedPosition.z, target.z)
+                lerp(smoothedPosition.x, target.x),
+                lerp(smoothedPosition.y, target.y),
+                lerp(smoothedPosition.z, target.z)
         );
         return smoothedPosition;
     }
@@ -35,9 +33,9 @@ public class PoseSmoother {
     public Quaternion smoothRotation(Quaternion target) {
         if (!initialized) {
             smoothedRotation = target;
-        } else {
-            smoothedRotation = Quaternion.slerp(smoothedRotation, target, alpha);
+            return target;
         }
+        smoothedRotation = Quaternion.slerp(smoothedRotation, target, alpha);
         return smoothedRotation;
     }
 
