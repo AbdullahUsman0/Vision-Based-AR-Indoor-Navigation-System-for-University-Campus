@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-feature android:name="android.hardware.camera.ar" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.ar" android:required="false" />
     <uses-feature android:name="android.hardware.camera" android:required="true" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ARNavigation">
 
-        <meta-data android:name="com.google.ar.core" android:value="required" />
+        <!-- Optional ARCore allows unsupported devices to install and use fallback mode. -->
+        <meta-data android:name="com.google.ar.core" android:value="optional" />
+
+        <activity
+            android:name=".FallbackActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ARActivity"
+            android:exported="false" />
 
         <activity
             android:name=".MainActivity"

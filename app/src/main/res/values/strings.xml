@@ -4,4 +4,7 @@
     <string name="use_server_switch">Use server localization</string>
     <string name="server_endpoint_hint">http://10.0.2.2:8000/pose</string>
     <string name="apply_settings_button">Apply</string>
+    <string name="mode_ar">Mode: AR</string>
+    <string name="mode_fallback">Mode: FALLBACK</string>
+    <string name="splash_loading_mode">Checking AR capabilities...</string>
 </resources>
